@@ -12,5 +12,7 @@
 <body>
 <h1>Travel Site</h1>
 ${DEBUG}
+
+
 </body>
 </html>
