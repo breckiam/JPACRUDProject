@@ -10,13 +10,9 @@
 <title>Travel Destinations</title>
 </head>
 <body>
-<header>
-<nav>
-<ul>
-<li><a href="add.do">Create</a></li>
-</ul>
-</nav>
-</header>
+
+<jsp:include page="nav.jsp"></jsp:include>
+
 <h1>Travel Site</h1>
 <form action="citySearch.do" method="post">
 <label for="city">Search by city name: </label>

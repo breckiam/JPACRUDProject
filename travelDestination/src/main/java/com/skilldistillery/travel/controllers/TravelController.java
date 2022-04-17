@@ -63,6 +63,21 @@ public class TravelController {
 		return "redirect:resultRedir.do";
 	}
 	
+	@RequestMapping(path="edit.do", method = RequestMethod.POST)
+	public ModelAndView edit(int id, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("dest", dao.findById(id));
+		mv.setViewName("edit");
+		return mv;
+	}
+	
+	
+	@RequestMapping(path="editDest.do", method = RequestMethod.POST)
+	public String editPage(Destination dest, RedirectAttributes redir) {
+		redir.addFlashAttribute("dest", dest);
+		return "redirect:resultRedir.do";
+	}
+	
 	@RequestMapping(path="resultRedir.do", method = RequestMethod.GET)
 	public ModelAndView result() {
 		ModelAndView mv = new ModelAndView();
