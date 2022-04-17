@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity    
 public class Destination {
 	
 	@Id
@@ -22,12 +22,13 @@ public class Destination {
 	private String stateRegion;
 	
 	private String city;
+	private Integer rating;
 	
 	@Column(name = "top_attractions")
 	private String topAtrractions;
 	
 	@Column(name = "has_traveled")
-	private boolean hasTraveled;
+	private Integer hasTraveled;
 	
 	@Column(name = "arrival_date")
 	private LocalDate arrivalDate;
@@ -52,6 +53,14 @@ public class Destination {
 
 	public int getId() {
 		return id;
+	}
+
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
 	}
 
 	public void setId(int id) {
@@ -92,11 +101,11 @@ public class Destination {
 		this.topAtrractions = topAtrractions;
 	}
 
-	public boolean isHasTraveled() {
+	public Integer isHasTraveled() {
 		return hasTraveled;
 	}
 
-	public void setHasTraveled(boolean hasTraveled) {
+	public void setHasTraveled(Integer hasTraveled) {
 		this.hasTraveled = hasTraveled;
 	}
 
