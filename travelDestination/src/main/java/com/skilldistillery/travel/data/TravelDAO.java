@@ -1,5 +1,6 @@
 package com.skilldistillery.travel.data;
 
+
 import com.skilldistillery.travel.entities.Destination;
 
 public interface TravelDAO {

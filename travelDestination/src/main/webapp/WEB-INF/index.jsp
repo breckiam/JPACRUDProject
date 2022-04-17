@@ -10,9 +10,20 @@
 <title>Travel Destinations</title>
 </head>
 <body>
+
 <h1>Travel Site</h1>
-<a href="search.do">Search</a>
-${DEBUG}
+<form action="citySearch.do" method="post">
+<label for="city">Search by city name: </label>
+<input type="search" name="city">
+<input type="submit" value="Search">
+</form>
+
+<form action="idSearch.do" method="post">
+<label for="city">Search by city name: </label>
+<input type="search" name="id">
+<input type="submit" value="Search">
+</form>
+
 
 
 </body>

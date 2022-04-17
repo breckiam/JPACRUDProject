@@ -1,5 +1,7 @@
 package com.skilldistillery.travel.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,15 +24,23 @@ public class TravelController {
 		return "index";
 	}
 	
-	@RequestMapping(path="search.do")
-	public String search() {
-		return "search";
-	}
 	
 	@RequestMapping(path="citySearch.do", method = RequestMethod.POST)
 	public ModelAndView citySearch(String city) {
 		Destination dest = dao.findByCityName(city);
 		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("dest", dest);
+		mv.setViewName("result");
+		
+		return mv;
+	}
+
+	@RequestMapping(path="idSearch.do", method = RequestMethod.POST)
+	public ModelAndView idSearch(int id) {
+		Destination dest = dao.findById(id);
+		ModelAndView mv = new ModelAndView();
+		
 		mv.addObject("dest", dest);
 		mv.setViewName("result");
 		
