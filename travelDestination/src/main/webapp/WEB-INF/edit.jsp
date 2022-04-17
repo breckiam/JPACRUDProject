@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<jsp:include page="stylelinks.jsp"></jsp:include>
 </head>
 <body>
 
@@ -36,6 +37,6 @@
 		<br>
 		<input type="submit" value="create">
 	</form>
-
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

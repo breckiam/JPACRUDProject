@@ -8,25 +8,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Travel Destinations</title>
+<jsp:include page="stylelinks.jsp"></jsp:include>
 </head>
 <body>
 
 <jsp:include page="nav.jsp"></jsp:include>
 
 <h1>Travel Site</h1>
-<form action="citySearch.do" method="post">
-<label for="city">Search by city name: </label>
-<input type="search" name="city">
-<input type="submit" value="Search">
-</form>
-
-<form action="idSearch.do" method="post">
-<label for="city">Search by id: </label>
-<input type="search" name="id">
-<input type="submit" value="Search">
-</form>
 
 
+
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>

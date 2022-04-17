@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<jsp:include page="stylelinks.jsp"></jsp:include>
 </head>
 <body>
 
@@ -47,5 +48,6 @@
 		</c:when>
 	</c:choose>
 
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
