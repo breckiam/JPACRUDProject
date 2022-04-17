@@ -1,6 +1,5 @@
 package com.skilldistillery.travel.controllers;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.travel.data.TravelDAO;
 import com.skilldistillery.travel.entities.Destination;
@@ -19,31 +19,55 @@ public class TravelController {
 	private TravelDAO dao;
 	
 	@RequestMapping(path= {"/", "home.do"})
-	public String home(Model model) {
-		model.addAttribute("DEBUG", dao.findById(1));
+	public String home() {
 		return "index";
+	}
+	
+	@RequestMapping(path= "add.do")
+	public String addPage(Model model) {
+		model.addAttribute("Destination", new Destination());
+		return "adddestination";
 	}
 	
 	
 	@RequestMapping(path="citySearch.do", method = RequestMethod.POST)
-	public ModelAndView citySearch(String city) {
+	public String citySearch(String city, RedirectAttributes redir) {
 		Destination dest = dao.findByCityName(city);
-		ModelAndView mv = new ModelAndView();
 		
-		mv.addObject("dest", dest);
-		mv.setViewName("result");
+		redir.addFlashAttribute("dest", dest);
 		
-		return mv;
+		return "redirect:resultRedir.do";
 	}
 
 	@RequestMapping(path="idSearch.do", method = RequestMethod.POST)
-	public ModelAndView idSearch(int id) {
+	public String idSearch(int id, RedirectAttributes redir) {
 		Destination dest = dao.findById(id);
+		
+		redir.addFlashAttribute("dest", dest);
+		
+		
+		return "redirect:resultRedir.do";
+	}
+	
+	@RequestMapping(path="addDest.do", method = RequestMethod.POST)
+	public String addDestination(Destination dest, RedirectAttributes redir) {
+		
+		redir.addFlashAttribute("dest", dest);
+		
+		return "redirect:resultRedir.do";
+	}
+	
+	@RequestMapping(path="delete.do", method = RequestMethod.POST)
+	public String delete(int id,RedirectAttributes redir) {
+		redir.addFlashAttribute("isDeleted", dao.deleteDestination(id));
+		return "redirect:resultRedir.do";
+	}
+	
+	@RequestMapping(path="resultRedir.do", method = RequestMethod.GET)
+	public ModelAndView result() {
 		ModelAndView mv = new ModelAndView();
-		
-		mv.addObject("dest", dest);
-		mv.setViewName("result");
-		
+		mv.setViewName("result");;
 		return mv;
 	}
+	
 }

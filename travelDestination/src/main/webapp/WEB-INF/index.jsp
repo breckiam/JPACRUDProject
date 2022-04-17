@@ -10,7 +10,13 @@
 <title>Travel Destinations</title>
 </head>
 <body>
-
+<header>
+<nav>
+<ul>
+<li><a href="add.do">Create</a></li>
+</ul>
+</nav>
+</header>
 <h1>Travel Site</h1>
 <form action="citySearch.do" method="post">
 <label for="city">Search by city name: </label>
@@ -19,7 +25,7 @@
 </form>
 
 <form action="idSearch.do" method="post">
-<label for="city">Search by city name: </label>
+<label for="city">Search by id: </label>
 <input type="search" name="id">
 <input type="submit" value="Search">
 </form>

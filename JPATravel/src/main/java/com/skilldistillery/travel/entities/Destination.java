@@ -25,7 +25,7 @@ public class Destination {
 	private Integer rating;
 	
 	@Column(name = "top_attractions")
-	private String topAtrractions;
+	private String topAttractions;
 	
 	@Column(name = "has_traveled")
 	private Integer hasTraveled;
@@ -93,12 +93,12 @@ public class Destination {
 		this.city = city;
 	}
 
-	public String getTopAtrractions() {
-		return topAtrractions;
+	public String getTopAttractions() {
+		return topAttractions;
 	}
 
-	public void setTopAtrractions(String topAtrractions) {
-		this.topAtrractions = topAtrractions;
+	public void setTopAttractions(String topAtrractions) {
+		this.topAttractions = topAtrractions;
 	}
 
 	public Integer isHasTraveled() {
@@ -130,7 +130,7 @@ public class Destination {
 	@Override
 	public String toString() {
 		return "Destination [id=" + id + ", countryName=" + countryName + ", stateRegion=" + stateRegion + ", city="
-				+ city + ", topAtrractions=" + topAtrractions + ", hasTraveled=" + hasTraveled + ", arrivalDate="
+				+ city + ", topAtrractions=" + topAttractions + ", hasTraveled=" + hasTraveled + ", arrivalDate="
 				+ arrivalDate + ", departureDate=" + departureDate + "]";
 	}
 

@@ -1,6 +1,5 @@
 package com.skilldistillery.travel.data;
 
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -48,7 +47,7 @@ public class TravelDAOImpl implements TravelDAO {
 		updateDest.setStateRegion(dest.getStateRegion());
 		updateDest.setCity(dest.getCity());
 		updateDest.setRating(dest.getRating());
-		updateDest.setTopAtrractions(dest.getTopAtrractions());
+		updateDest.setTopAttractions(dest.getTopAttractions());
 		updateDest.setHasTraveled(dest.isHasTraveled());
 		updateDest.setArrivalDate(dest.getArrivalDate());
 		updateDest.setDepartureDate(dest.getDepartureDate());
