@@ -19,7 +19,8 @@ public class TravelController {
 	private TravelDAO dao;
 	
 	@RequestMapping(path= {"/", "home.do"})
-	public String home() {
+	public String home(Model model) {
+		model.addAttribute("destList", dao.showAll());
 		return "index";
 	}
 	
@@ -52,7 +53,7 @@ public class TravelController {
 	@RequestMapping(path="addDest.do", method = RequestMethod.POST)
 	public String addDestination(Destination dest, RedirectAttributes redir) {
 		
-		redir.addFlashAttribute("dest", dest);
+		redir.addFlashAttribute("dest", dao.createDestination(dest));
 		
 		return "redirect:resultRedir.do";
 	}

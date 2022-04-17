@@ -1,6 +1,8 @@
 package com.skilldistillery.travel.data;
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -65,6 +67,15 @@ public class TravelDAOImpl implements TravelDAO {
 			wasDeleted = !em.contains(d);
 		}
 		return wasDeleted;
+	}
+	
+	@Override
+	public List<Destination> showAll() {
+		String query = "SELECT d FROM Destination d";
+		List<Destination> dl = em.createQuery(query, Destination.class)
+				.getResultList();
+		
+		return dl;
 	}
 
 }
