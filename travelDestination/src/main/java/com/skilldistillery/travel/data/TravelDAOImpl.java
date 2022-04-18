@@ -50,7 +50,7 @@ public class TravelDAOImpl implements TravelDAO {
 		updateDest.setCity(dest.getCity());
 		updateDest.setRating(dest.getRating());
 		updateDest.setTopAttractions(dest.getTopAttractions());
-		updateDest.setHasTraveled(dest.isHasTraveled());
+		updateDest.setHasTraveled(dest.getHasTraveled());
 		updateDest.setArrivalDate(dest.getArrivalDate().toString());
 		updateDest.setDepartureDate(dest.getDepartureDate().toString());
 		
