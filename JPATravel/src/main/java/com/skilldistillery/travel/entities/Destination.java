@@ -113,16 +113,16 @@ public class Destination {
 		return arrivalDate;
 	}
 
-	public void setArrivalDate(LocalDate arrivalDate) {
-		this.arrivalDate = arrivalDate;
+	public void setArrivalDate(String arrivalDate) {
+		this.arrivalDate = LocalDate.parse(arrivalDate);
 	}
 
 	public LocalDate getDepartureDate() {
 		return departureDate;
 	}
 
-	public void setDepartureDate(LocalDate departureDate) {
-		this.departureDate = departureDate;
+	public void setDepartureDate(String departureDate) {
+		this.departureDate = LocalDate.parse(departureDate);
 	}
 
 	///////////// END SETTERS and GETTERS /////////////////////

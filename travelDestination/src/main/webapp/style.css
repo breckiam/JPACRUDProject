@@ -33,3 +33,57 @@
 .create-btn {
 	margin-left: 5%;
 }
+
+.single-dest {
+	background-color:#4b4b4d; 
+	display: grid;
+	height:100vh;	
+	grid-template-areas: 
+		". . . ."
+		"a a b b"
+		". . . .";
+	grid-template-rows: 10vh 1fr 10vh;
+	grid-template-columns: 5% 1fr 1fr 5%;
+}
+
+@media (max-width:850px) {
+	.single-dest{
+	grid-template-areas: 
+		". . . ."
+		". a a ."
+		". b b ."
+		". . . .";
+	grid-template-rows: 10vh 1fr 1fr 10vh;
+	grid-template-columns: 5% 1fr 1fr 5%;
+	}
+	
+	.dest-text-container {
+		margin: auto 0;
+	}
+}
+
+.dest-text-container {
+	grid-area: a; 
+	margin-left: 5%;
+		
+}
+
+.map-container {
+	grid-area: b;
+	margin-right: 5%;
+}
+
+.delete-page {
+	height: 100vh;
+	background-color: #4b4b4d;
+}
+
+.delete-text {
+	padding-top: 3vh;
+}
+
+.addDest {
+	height: 100vh;
+	background-color: #4b4b4d;
+	padding: 5%;
+}

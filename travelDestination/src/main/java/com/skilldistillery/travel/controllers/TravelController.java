@@ -61,7 +61,14 @@ public class TravelController {
 	@RequestMapping(path="delete.do", method = RequestMethod.POST)
 	public String delete(int id,RedirectAttributes redir) {
 		redir.addFlashAttribute("isDeleted", dao.deleteDestination(id));
-		return "redirect:resultRedir.do";
+		return "redirect:deleteRedir.do";
+	}
+	
+	@RequestMapping(path="deleteRedir.do", method = RequestMethod.GET)
+	public ModelAndView deleteResult() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("deleted");
+		return mv;
 	}
 	
 	@RequestMapping(path="edit.do", method = RequestMethod.POST)
