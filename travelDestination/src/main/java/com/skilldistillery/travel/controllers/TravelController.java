@@ -81,8 +81,8 @@ public class TravelController {
 	
 	
 	@RequestMapping(path="editDest.do", method = RequestMethod.POST)
-	public String editPage(Destination dest, RedirectAttributes redir) {
-		redir.addFlashAttribute("dest", dest);
+	public String editPage(int id, Destination dest, RedirectAttributes redir) {
+		redir.addFlashAttribute("dest", dao.updateDestination(id, dest));
 		return "redirect:resultRedir.do";
 	}
 	

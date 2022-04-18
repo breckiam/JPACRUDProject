@@ -82,7 +82,8 @@
 	padding-top: 3vh;
 }
 
-.addDest {
+.addDest,
+.editSection {
 	height: 100vh;
 	background-color: #4b4b4d;
 	padding: 5%;
