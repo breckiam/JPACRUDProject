@@ -102,7 +102,7 @@ public class Destination {
 		this.topAttractions = topAtrractions;
 	}
 
-	public Integer isHasTraveled() {
+	public Integer getHasTraveled() {
 		return hasTraveled;
 	}
 

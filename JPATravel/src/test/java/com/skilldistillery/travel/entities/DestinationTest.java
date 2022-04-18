@@ -2,6 +2,7 @@ package com.skilldistillery.travel.entities;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.crypto.AEADBadTagException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -44,6 +45,13 @@ class DestinationTest {
 	void test_Destination_entity_mapping() {
 		assertNotNull(destination);
 		assertEquals("United States", destination.getCountryName());
+		assertEquals("Colorado", destination.getStateRegion());
+		assertEquals("Brighton", destination.getCity());
+		assertEquals(3, destination.getRating());
+		assertEquals(1, destination.getHasTraveled());
+		assertNull(destination.getTopAttractions(), "null");
+		assertNull(destination.getArrivalDate(), "null");
+		assertNull(destination.getDepartureDate(), "null");
 	}
 
 }
